@@ -71,8 +71,7 @@
         <p class="mb-0">You have passed the exam.</p>
         <hr />
         <p class="mb-0">
-          <strong>Final Score:</strong> {{ grade }}/{{ max_score }} ({{
-          score_percent }}%)
+          <strong>Final Score:</strong> {{ grade }}/{{ max_score }} ({{ score_percent }}%)
         </p>
       </div>
       {% else %}
@@ -86,8 +85,7 @@
         </p>
         <hr />
         <p class="mb-0">
-          <strong>Final Score:</strong> {{ grade }}/{{ max_score }} ({{
-          score_percent }}%)
+          <strong>Final Score:</strong> {{ grade }}/{{ max_score }} ({{ score_percent }}%)
         </p>
       </div>
       <a
@@ -102,12 +100,11 @@
         {% for question in questions %}
         <div class="card mt-2">
           <div class="card-header">
-            <strong>Question {{ forloop.counter }}:</strong> {{ question.content
-            }}
+            <strong>Question {{ forloop.counter }}:</strong> {{ question.content }}
           </div>
           <div class="card-body">
-            {% for choice in question.choice_set.all %} {% if choice in choices
-            and choice.is_correct %}
+            {% for choice in question.choice_set.all %}
+            {% if choice in choices and choice.is_correct %}
             <div class="alert alert-success py-2 mb-2">
               {{ choice.content }}
               <span class="badge badge-success ml-2">Correctly selected</span>
